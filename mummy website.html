@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maneesha's Botanicals</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--olive:#556B2F;
+--sage:#A8B5A2;
+--beige:#F5F0E6;
+--gold:#C8A96B;
+--dark:#2E2E2E;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+color:var(--dark);
+background:white;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+}
+
+header{
+position:sticky;
+top:0;
+background:white;
+padding:20px 0;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:999;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:2rem;
+font-weight:bold;
+color:var(--olive);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:var(--dark);
+font-weight:500;
+}
+
+.hero{
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-content{
+max-width:800px;
+padding:20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+margin:10px;
+transition:.3s;
+}
+
+.primary-btn{
+background:var(--gold);
+color:white;
+}
+
+.secondary-btn{
+border:2px solid white;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+color:var(--olive);
+margin-bottom:50px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.category-card{
+background:var(--beige);
+padding:40px;
+text-align:center;
+border-radius:20px;
+font-weight:600;
+transition:.3s;
+}
+
+.category-card:hover{
+transform:translateY(-5px);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.product-info{
+padding:20px;
+}
+
+.product-info h3{
+color:var(--olive);
+margin-bottom:10px;
+}
+
+.price{
+font-size:1.2rem;
+font-weight:bold;
+margin:10px 0;
+}
+
+.cart-btn{
+width:100%;
+padding:12px;
+background:var(--olive);
+border:none;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+.about{
+background:var(--beige);
+text-align:center;
+}
+
+.about p{
+max-width:800px;
+margin:auto;
+font-size:1.1rem;
+}
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.benefit{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.contact{
+background:var(--sage);
+}
+
+.contact-form{
+max-width:700px;
+margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+}
+
+.contact-form button{
+background:var(--olive);
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+cursor:pointer;
+}
+
+footer{
+background:var(--olive);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.section-title{
+font-size:2.2rem;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">Maneesha's Botanicals</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#soaps">Shop</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>Handcrafted Botanical Soaps Made with Nature's Finest Ingredients</h1>
+
+<p>
+Experience the goodness of cold process soap crafted in small batches using premium oils, herbs, clays, and botanical extracts.
+</p>
+
+<a href="#soaps" class="btn primary-btn">Shop Collection</a>
+<a href="#about" class="btn secondary-btn">Learn More</a>
+
+</div>
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Featured Categories</h2>
+
+<div class="categories">
+
+<div class="category-card">Facial Soaps</div>
+<div class="category-card">Herbal Soaps</div>
+<div class="category-card">Exfoliating Soaps</div>
+<div class="category-card">Luxury Bath Bars</div>
+<div class="category-card">Sensitive Skin Collection</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="soaps">
+
+<div class="container">
+
+<h2 class="section-title">Our Handmade Soap Collection</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80">
+<div class="product-info">
+<h3>Kumkumadi Glow Soap</h3>
+<p>Brightening & Radiance</p>
+<div class="price">₹299</div>
+<button class="cart-btn">Add to Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80">
+<div class="product-info">
+<h3>Rose & Goat Milk Soap</h3>
+<p>Hydrating & Nourishing</p>
+<div class="price">₹249</div>
+<button class="cart-btn">Add to Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1607006483225-71d0d5d94c93?auto=format&fit=crop&w=800&q=80">
+<div class="product-info">
+<h3>Neem Tulsi Soap</h3>
+<p>Purifying & Herbal</p>
+<div class="price">₹249</div>
+<button class="cart-btn">Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section about" id="about">
+
+<div class="container">
+
+<h2 class="section-title">Our Botanical Journey</h2>
+
+<p>
+Maneesha's Botanicals was created with a passion for natural skincare and traditional soap-making. Every bar is handcrafted using the cold process method, preserving natural glycerin and nourishing oils for a luxurious skincare experience.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Why Choose Us</h2>
+
+<div class="benefits">
+
+<div class="benefit">🌿 Natural Ingredients</div>
+<div class="benefit">🧼 Handmade</div>
+<div class="benefit">🐰 Cruelty Free</div>
+<div class="benefit">♻ Eco Friendly</div>
+<div class="benefit">🌴 Palm Oil Free</div>
+<div class="benefit">✨ Small Batch Crafted</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="section contact" id="contact">
+
+<div class="container" style="text-align:center;">
+
+<h2 class="section-title">Order on WhatsApp</h2>
+
+<p style="font-size:1.2rem; margin-bottom:30px;">
+Ready to order our handcrafted botanical soaps?
+Chat with us directly on WhatsApp.
+</p>
+
+<a href="https://wa.me/918527677535?text=Hello%20Maneesha's%20Botanicals,%20I%20am%20interested%20in%20your%20handmade%20cold%20process%20soaps."
+target="_blank"
+style="
+display:inline-block;
+background:#25D366;
+color:white;
+padding:18px 40px;
+font-size:18px;
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:0.3s;
+">
+
+ Chat on WhatsApp
+
+</a>
+
+</div>
+
+</section>
+```
+
+<footer>
+
+<h3>Maneesha's Botanicals</h3>
+
+<p>Nature's Purity, Handcrafted for Your Skin</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".cart-btn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+alert("Product added to cart!");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+```
