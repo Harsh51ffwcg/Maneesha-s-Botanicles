@@ -59,10 +59,10 @@ justify-content:space-between;
 align-items:center;
 }
 
-.logo{
-font-size:2rem;
-font-weight:bold;
-color:var(--olive);
+.logo img{
+height:80px;
+width:auto;
+display:block;
 }
 
 nav ul{
@@ -79,16 +79,12 @@ font-weight:500;
 
 .hero{
 height:90vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('images/logo.png');
-background-size:cover;
-background-position:center;
+background:linear-gradient(135deg,#F8F5EE,#EFE8DA);
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
+padding:40px;
 }
 
 .hero-content{
@@ -293,7 +289,9 @@ gap:15px;
 <header>
 <div class="container">
 <nav>
-<div class="logo">Maneesha's Botanicals</div>
+<div class="logo">
+    <img src="images/logo.png" alt="Maneesha's Botanicals">
+</div>
 
 <ul>
 <li><a href="#">Home</a></li>
